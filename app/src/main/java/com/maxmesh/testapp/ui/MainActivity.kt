@@ -1,11 +1,16 @@
-package com.maxmesh.testapp
+package com.maxmesh.testapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.maxmesh.testapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, VideoPlayerFragment())
+            .commit()
     }
 }

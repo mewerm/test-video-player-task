@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestApp</string>
+    <string name="back_button_content_description">back_button</string>
+    <string name="button_text">TEXT</string>
 </resources>
