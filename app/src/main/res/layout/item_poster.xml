@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_marginEnd="22dp"
+    android:layout_marginEnd="@dimen/margin_end_for_posters"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-
         <ImageView
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:layout_width="@dimen/width_poster_image"
+            android:layout_height="@dimen/height_poster_image"
             android:src="@drawable/ic_launcher_foreground"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/poster_image_view_description" />
 </com.google.android.material.card.MaterialCardView>

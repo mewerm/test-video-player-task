@@ -2,4 +2,7 @@
     <string name="app_name">TestApp</string>
     <string name="back_button_content_description">back_button</string>
     <string name="button_text">TEXT</string>
+    <string name="hint_for_edit_text">Set your text</string>
+    <string name="edit_text_message">Tap to change text and move it</string>
+    <string name="poster_image_view_description">Here is image of poster</string>
 </resources>

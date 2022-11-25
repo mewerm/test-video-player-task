@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="app_style_color">#6371DE</color>
     <color name="background_for_items">#1EA7A7A7</color>
+    <color name="edit_text_color">#65DE63</color>
+    <color name="hint_text_color">#9C65DE63</color>
 </resources>
