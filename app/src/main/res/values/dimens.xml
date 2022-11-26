@@ -11,8 +11,8 @@
     <dimen name="edit_text_text_size">24sp</dimen>
     <dimen name="width_poster_image">72dp</dimen>
     <dimen name="height_poster_image">72dp</dimen>
-    <dimen name="back_btn_width">32dp</dimen>
-    <dimen name="back_btn_height">32dp</dimen>
+    <dimen name="back_btn_width">28dp</dimen>
+    <dimen name="back_btn_height">28dp</dimen>
     <dimen name="card_view_height">200dp</dimen>
     <dimen name="recycler_view_width">0dp</dimen>
 </resources>

@@ -1,8 +1,9 @@
-package com.maxmesh.testapp.ui
+package com.maxmesh.testapp.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.maxmesh.testapp.R
+import com.maxmesh.testapp.ui.VideoPlayerFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

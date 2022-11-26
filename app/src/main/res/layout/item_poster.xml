@@ -5,9 +5,10 @@
     android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/imageViewPoster"
             android:layout_width="@dimen/width_poster_image"
             android:layout_height="@dimen/height_poster_image"
             android:src="@drawable/ic_launcher_foreground"
-            android:scaleType="fitCenter"
+            android:scaleType="center"
             android:contentDescription="@string/poster_image_view_description" />
 </com.google.android.material.card.MaterialCardView>
