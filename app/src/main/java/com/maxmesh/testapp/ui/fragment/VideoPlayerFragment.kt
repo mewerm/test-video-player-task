@@ -1,4 +1,4 @@
-package com.maxmesh.testapp.ui
+package com.maxmesh.testapp.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

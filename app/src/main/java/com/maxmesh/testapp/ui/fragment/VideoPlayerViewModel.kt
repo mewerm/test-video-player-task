@@ -1,7 +1,8 @@
-package com.maxmesh.testapp.ui
+package com.maxmesh.testapp.ui.fragment
 
 import android.annotation.SuppressLint
 import android.net.Uri
+import android.util.Log
 import android.widget.EditText
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.LiveData
@@ -24,22 +25,22 @@ class VideoPlayerViewModel : ViewModel() {
                 val data = apiServices?.getDataFromAPI()
                 _postersLiveData.postValue(data!!)
             } catch (e: Exception) {
-                // todo catch
+                Log.d("@@@@", "${e.message}")
             }
         }
     }
 
     fun loadVideo(data: MultimediaEntity, binding: FragmentVideoPlayerBinding) = with(binding) {
-        videoPlayer.setVideoURI(Uri.parse(data.file_url))
-        videoPlayer.start()
-        videoPlayer.setOnCompletionListener {
+            videoPlayer.setVideoURI(Uri.parse(data.file_url))
             videoPlayer.start()
-        }
+            videoPlayer.setOnCompletionListener {
+                videoPlayer.start()
+            }
     }
-
 
     private var x: Double = 0.0
     private var y: Double = 0.0
+
     @SuppressLint("ClickableViewAccessibility")
     fun moveEditText(editText: EditText) {
         editText.doAfterTextChanged {

@@ -1,11 +1,14 @@
-package com.maxmesh.testapp.ui
+package com.maxmesh.testapp.ui.fragment
 
+import android.graphics.PorterDuff
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.maxmesh.testapp.R
 import com.maxmesh.testapp.databinding.ItemPosterBinding
 import com.maxmesh.testapp.domain.entity.MultimediaEntity
 
@@ -29,15 +32,27 @@ class PostersAdapter :
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(data: MultimediaEntity) {
+            doBlurEffect(PorterDuff.Mode.DST)
             with(binding) {
                 Glide.with(itemView).load(data.small_thumbnail_url)
                     .into(imageViewPoster)
-
                 imageViewPoster.setOnClickListener {
                     onItemClicked.invoke(data)
+                    if (adapterPosition == position) {
+                        notifyItemChanged(position)
+                        doBlurEffect(PorterDuff.Mode.MULTIPLY)
+                    } else return@setOnClickListener
                 }
-
             }
+        }
+
+        private fun doBlurEffect(mode: PorterDuff.Mode) {
+            binding.imageViewPoster.setColorFilter(
+                ContextCompat.getColor(
+                    itemView.context,
+                    R.color.blur
+                ), mode
+            )
         }
     }
 }
