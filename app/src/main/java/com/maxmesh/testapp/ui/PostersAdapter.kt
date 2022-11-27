@@ -9,12 +9,14 @@ import com.bumptech.glide.Glide
 import com.maxmesh.testapp.databinding.ItemPosterBinding
 import com.maxmesh.testapp.domain.entity.MultimediaEntity
 
-class PostersAdapter: ListAdapter<MultimediaEntity, PostersAdapter.PosterHolder>(Comparator()) {
+class PostersAdapter :
+    ListAdapter<MultimediaEntity, PostersAdapter.PosterHolder>(Comparator()) {
+    var onItemClicked: ((MultimediaEntity) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PosterHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemPosterBinding.inflate(inflater, parent, false)
-        return PosterHolder(binding)
+        return PosterHolder(binding, onItemClicked!!)
     }
 
     override fun onBindViewHolder(holder: PosterHolder, position: Int) {
@@ -22,13 +24,19 @@ class PostersAdapter: ListAdapter<MultimediaEntity, PostersAdapter.PosterHolder>
     }
 
     inner class PosterHolder(
-        private val binding: ItemPosterBinding
+        private val binding: ItemPosterBinding,
+        private val onItemClicked: (MultimediaEntity) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(data: MultimediaEntity) {
             with(binding) {
                 Glide.with(itemView).load(data.small_thumbnail_url)
                     .into(imageViewPoster)
+
+                imageViewPoster.setOnClickListener {
+                    onItemClicked.invoke(data)
+                }
+
             }
         }
     }

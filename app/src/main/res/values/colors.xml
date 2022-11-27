@@ -11,4 +11,5 @@
     <color name="background_for_items">#1EA7A7A7</color>
     <color name="edit_text_color">#65DE63</color>
     <color name="hint_text_color">#9C65DE63</color>
+    <color name="blur">#7CABABAB</color>
 </resources>

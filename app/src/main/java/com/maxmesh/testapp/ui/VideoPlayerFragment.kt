@@ -32,6 +32,7 @@ class VideoPlayerFragment : Fragment() {
         initAdapter(adapter)
         clickOnTextButton()
         clickOnBackButton()
+        doPosterClickListener()
     }
 
     private fun initAdapter(adapter: PostersAdapter) {
@@ -50,6 +51,10 @@ class VideoPlayerFragment : Fragment() {
             binding.editText.visibility = View.VISIBLE
             viewModel.moveEditText(binding.editText)
         }
+    }
+
+    private fun doPosterClickListener() {
+        adapter.onItemClicked = { item -> viewModel.loadVideo(item, binding) }
     }
 
     override fun onDestroyView() {

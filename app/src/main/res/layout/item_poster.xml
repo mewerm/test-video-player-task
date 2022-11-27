@@ -10,5 +10,5 @@
             android:layout_height="@dimen/height_poster_image"
             android:src="@drawable/ic_launcher_foreground"
             android:scaleType="center"
-            android:contentDescription="@string/poster_image_view_description" />
+            android:tintMode="screen"/>
 </com.google.android.material.card.MaterialCardView>
